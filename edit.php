@@ -10,13 +10,9 @@ require_once('protect.php');
 	<meta charset="utf-8">
 	<title>Linkalot</title>
 	<link rel="shortcut icon" href="favicon.png" />
-	<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-	 #content {
-             margin: 0px 1em auto;
-             text-align: left;
-	 }
 	 textarea {
 	     font-size: 15px;
 	     width: 75%;
@@ -26,32 +22,31 @@ require_once('protect.php');
 	</style>
     </head>
     <body>
-	<div id="content">
-	    <h1>Linkalot</h1>
-	    <form method="GET" action="index.php">
-		<p><button class="btn btn-default btn-ghost" type="submit" role="button" name="submit">Back</button></p>
-            </form>
-            <?php
-            function Read() {
-		$f = "links.txt";
-                echo file_get_contents($f);
-            }
-            function Write() {
-		$f = "links.txt";
-                $fp = fopen($f, "w");
-                $data = $_POST["text"];
-                fwrite($fp, $data);
-                fclose($fp);
-            }
-            if ($_POST["submit_check"]){
-		Write();
-            };
-            ?>      
-            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-		<textarea name="text"><?php Read(); ?></textarea><br /><br />
-		<button class="btn btn-primary" type="submit" role="button" name="submit">Save</button>
-		<input type="hidden" name="submit_check" value="1">
-            </form>
+	<h1>Linkalot</h1>
+	<form method="GET" action="index.php">
+	    <p><button>Back</button></p>
+        </form>
+        <?php
+        function Read() {
+	    $f = "links.txt";
+            echo file_get_contents($f);
+        }
+        function Write() {
+	    $f = "links.txt";
+            $fp = fopen($f, "w");
+            $data = $_POST["text"];
+            fwrite($fp, $data);
+            fclose($fp);
+        }
+        if ($_POST["submit_check"]){
+	    Write();
+        };
+        ?>      
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+	    <textarea name="text"><?php Read(); ?></textarea><br /><br />
+	    <button>Save</button>
+	    <input type="hidden" name="submit_check" value="1">
+        </form>
 	</div>
     </body>
 </html>
