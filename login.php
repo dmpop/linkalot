@@ -31,10 +31,8 @@ if (isset($_POST['password']) && $_POST['password'] == $config['passwd']) {
 	</head>
     </head>
     <body>
-	<div style="text-align:center;margin-top:50px;">
-            <form method="POST">
-		Password: <input type="password" name="password">
-            </form>
-	</div>
+        <form method="POST">
+			Password: <input type="password" name="password">
+        </form>
     </body>
 </html>

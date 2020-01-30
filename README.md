@@ -1,10 +1,10 @@
 # Linkalot
 
-A crude PHP tool for saving links. Requires the following bookmarklet.
+A crude link list tool written in PHP. Works best with the following bookmarklet (replace _SECRET_ with the actual value of the `key` variable in _config.php_).
 
 
 ```javascript
-javascript:location.href='https://127.0.0.1/linkalot/index.php?url='+encodeURIComponent(location.href)+'&secret=SECRET'
+javascript:location.href='https://127.0.0.1/linkalot/index.php?url='+encodeURIComponent(location.href)+'&key=SECRET'
 ```
 
  Author
