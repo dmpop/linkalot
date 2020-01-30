@@ -15,7 +15,6 @@ require_once('protect.php');
 	<style>
 	 textarea {
 	     font-size: 15px;
-	     width: 75%;
 	     height: 55%;
 	     line-height: 1.9;
 	 }
