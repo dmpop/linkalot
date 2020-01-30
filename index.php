@@ -21,17 +21,18 @@
 		$config = include('config.php');
 	    if($_GET["url"] && $_GET['key'] == $config['key'])
 	    {
-		$f = file_put_contents('links.txt', $_GET['url'].PHP_EOL , FILE_APPEND | LOCK_EX);
+		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>';
+		$f = file_put_contents('links.txt', $href.PHP_EOL , FILE_APPEND | LOCK_EX);
 		echo "<h2>Link added</h2>";
 	    }
 	    $f = fopen("links.txt", "r");
 	    if ($f) {
 		while (($line = fgets($f)) !== false) {
-		    echo "<p><a href='".$line."'>".$line."</a></p>";
+		    echo $line;
 		}
 		fclose($f);
 	    } else {
-		echo "Error";
+		echo "<h2>Error</h2>";
 	    }
 	    ?>
 	</div>
