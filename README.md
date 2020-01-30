@@ -4,7 +4,7 @@ A crude link list tool written in PHP. Works best with the following bookmarklet
 
 
 ```javascript
-javascript:var val= prompt("Description",""); location.href='https://127.0.0.1/linkalot/index.php?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(val)
+javascript:var text=prompt("Description",""); location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)
 
 ```
 

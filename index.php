@@ -18,11 +18,12 @@
 		<p><button>Edit</button></p>
 	    </form>
 	    <?php
-		$config = include('config.php');
+	    $config = include('config.php');
 	    if($_GET["url"] && $_GET['key'] == $config['key'])
 	    {
-		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>';
-		$f = file_put_contents('links.txt', $href.PHP_EOL , FILE_APPEND | LOCK_EX);
+		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>'."\n";
+		$href .= file_get_contents('links.txt');
+		file_put_contents('links.txt', $href);
 		echo "<h2>Link added</h2>";
 	    }
 	    $f = fopen("links.txt", "r");
