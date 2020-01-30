@@ -18,7 +18,8 @@
 		<p><button>Edit</button></p>
 	    </form>
 	    <?php
-	    if( $_GET["url"] && $_GET['secret'] == 'secret' )
+		$config = include('config.php');
+	    if($_GET["url"] && $_GET['key'] == $config['key'])
 	    {
 		$f = file_put_contents('links.txt', $_GET['url'].PHP_EOL , FILE_APPEND | LOCK_EX);
 		echo "<h2>Link added</h2>";
