@@ -19,7 +19,7 @@
 	    </form>
 	    <?php
 	    $config = include('config.php');
-	    if($_GET["url"] && $_GET['key'] == $config['key'])
+	    if(isset($_GET["url"]) && isset($_GET['key']) == $config['key'])
 	    {
 		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>'."\n";
 		$href .= file_get_contents('links.txt');
