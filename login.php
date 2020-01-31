@@ -13,7 +13,7 @@ date_default_timezone_set('UTC');
 $remember_password = strtotime('+30 days'); // 30 days
 
 if (isset($_POST['password']) && $_POST['password'] == $config['passwd']) {
-    setcookie("password", $password, $remember_password);
+    setcookie("password", $config['passwd'], $remember_password);
     header('Location: ' . $redirect_after_login);
     exit;
 }
@@ -25,7 +25,7 @@ if (isset($_POST['password']) && $_POST['password'] == $config['passwd']) {
 	    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width">
 	    <link rel="shortcut icon" href="favicon.png" />
-	    <<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Linkalot</title>
 	</head>
