@@ -1,9 +1,9 @@
 # Linkalot
 
-Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP. Linkalot highlights:
+Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP. Linkalot's highlights:
 
 - Instanly save links in a link list using the accompanying bookmarklet.
-- Add short description of a link. This description appears as a pop-up when you hover the mouse of the link.
+- Add a short description to a link. The description appears as a pop-up when hovering the mouse of the link.
 - All links are saved in a plain text file.
 - Password-protected editing area for managing the saved links.
 
@@ -15,21 +15,19 @@ Linkalot is a web-based inbox for your links. Linkalot runs on any machine or we
 
 ## Installation and Usage
 
-1. Install the required packages on a local machine or remote web server.
-2. Clone the project's repository using the `git clone https://gitlab.com/dmpop/linkalot.git` command. Alternatively, download the latest source code using the appropriate button on the project's pages.
-3. Open the _linkalot/config.php_ file and change example values of the `key` and `passwd` variables. Save the changes.
-
-To run Lilut locally, switch in the terminal to the _linkalot_ directory,  run the `php -S 127.0.0.1:8000` command, and point the browser to the _127.0.0.1:8000_ address.
-
-To install Linkalot on a web server with PHP, copy the _linkalot_ directory to the document root of your server.
-
-Linkalot works best with the following bookmarklet. Replace _SECRET_ with the actual value of the `key` variable in _config.php_. Replace _127.0.0.1_ with the actual IP address or domain name of the server running Linkalot.
-
+1. Make sure that your local machine or remote web server has PHP installed.
+2. Clone the project's repository using the `git clone https://gitlab.com/dmpop/linkalot.git` command. Alternatively, download the latest source code using the appropriate button on the project's page.
+3. Open the _linkalot/config.php_ file and change example values of the `key` and `passwd` variables.
+4. Add the bookmarklet below to your browser. (Replace _SECRET_ with the actual value of the `key` variable in _config.php_. Replace _127.0.0.1_ with the actual IP address or domain name of the server running Linkalot.)
 
 ```javascript
 javascript:var text=prompt("Description",""); location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)
 
 ```
+
+To run Linkalot locally, switch in the terminal to the _linkalot_ directory,  run the `php -S 127.0.0.1:8000` command, and point the browser to the _127.0.0.1:8000_ address.
+
+To install Linkalot on a web server with PHP, move the _linkalot_ directory to the document root of your server.
 
 ## Problems?
 
