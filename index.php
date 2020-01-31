@@ -9,7 +9,6 @@
 	<link rel="shortcut icon" href="favicon.png" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
     </head>
     <body>
 	<div style="margin-top: 1em; font-size: 1.1em;">
