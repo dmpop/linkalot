@@ -1,13 +1,17 @@
 # Linkalot
 
-Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP.
+Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP. Linkalot highlights:
+
+- Instanly save links in a link list using the accompanying bookmarklet.
+- Add short description of a link. This description appears as a pop-up when you hover the mouse of the link.
+- All links are saved in a plain text file.
+- Password-protected editing area for managing the saved links.
 
 ## Dependencies
 
 - PHP
 - Web server (Apache, Lighttpd, or similar)
 - Git (optional)
-
 
 ## Installation and Usage
 
