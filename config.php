@@ -1,6 +1,8 @@
 <?php
-return [
-    'passwd' => 'password',
-    'key' => 'secret'
-];
+// Title
+$title = "Linkalot";
+// Login password
+$passwd = "password";
+// Unique key for identifying HTTP request
+$key = "secret";
 ?>

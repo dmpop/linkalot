@@ -1,3 +1,7 @@
+<?php
+	include('config.php');
+?>
+
 <html lang="en">
     
     <!-- Author: Dmitri Popov, dmpop@linux.com
@@ -12,13 +16,12 @@
     </head>
     <body>
 	<div style="margin-top: 1em; font-size: 1.1em;">
-	    <h1>Linkalot</h1>
+	    <h1><?php echo $title ?></h1>
 	    <form method='GET' action='edit.php'>
 		<p><button>Edit</button></p>
 	    </form>
 	    <?php
-	    $config = include('config.php');
-	    if(isset($_GET["url"]) && isset($_GET['key']) == $config['key'])
+	    if(isset($_GET["url"]) && isset($_GET['key']) == $key)
 	    {
 		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>'."\n";
 		$href .= file_get_contents('links.txt');
