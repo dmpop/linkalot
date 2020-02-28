@@ -2,7 +2,7 @@
 
 Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP. Linkalot's highlights:
 
-- Instanly save links in a link list using the accompanying bookmarklet.
+- Instantly save links in a link list using the accompanying bookmarklet.
 - Add a short description to a link. The description appears as a pop-up when hovering the mouse of the link.
 - All links are saved in a plain text file.
 - Password-protected editing area for managing the saved links.
