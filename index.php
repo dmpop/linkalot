@@ -34,7 +34,7 @@
 		$f = file("links.txt");
 	    $rnd_link = $f[array_rand($f)];
 	    echo "Random link &#8628;".$rnd_link;
-	    echo "<br />";
+	    echo "<hr />";
 	    $f = fopen("links.txt", "r");
 	    if ($f) {
 		while (($line = fgets($f)) !== false) {
@@ -45,7 +45,8 @@
 		echo "<h2>Error</h2>";
 	    }
 	    ?>
-		<p style="padding: 1em 0 0 0; border-top: 2px solid;">&copy; <?php echo date("Y "); echo $footer; ?></p>
+		<hr />
+		<p>&copy; <?php echo date("Y "); echo $footer; ?></p>
 	</div>
     </body>
 </html>
