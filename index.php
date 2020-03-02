@@ -1,4 +1,6 @@
 <?php
+	// CORS policy to allow the submitted page to read the response
+	header('Access-Control-Allow-Origin: *');
 	include('config.php');
 ?>
 
