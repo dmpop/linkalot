@@ -1,6 +1,7 @@
 <?php
 	// CORS policy to allow the submitted page to read the response
 	header('Access-Control-Allow-Origin: *');
+	error_reporting(E_ERROR);
 	include('config.php');
 ?>
 
@@ -30,6 +31,10 @@
 		file_put_contents('links.txt', $href);
 		echo "<h2>Link added</h2>";
 	    }
+		$f = file("links.txt");
+	    $rnd_link = $f[array_rand($f)];
+	    echo "Random link &#8628;".$rnd_link;
+	    echo "<br />";
 	    $f = fopen("links.txt", "r");
 	    if ($f) {
 		while (($line = fgets($f)) !== false) {
