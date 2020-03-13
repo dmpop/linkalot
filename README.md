@@ -25,6 +25,12 @@ javascript:var text=prompt("Description",""); location.href='https://127.0.0.1/l
 
 ```
 
+Linkalot also works with the [Send Tab URL](https://addons.mozilla.org/en-US/firefox/addon/send-tab-url/) add-on for Firefox. You can use this extension instead of the bookmarklet. In the add-on's **Preferences** section, add the following URL:
+
+    https://127.0.0.1/linkalot/?url={URL}&txt={TITLE}&key=SECRET
+
+Replace _SECRET_ with the actual value of the `key` variable in _config.php_. Replace _127.0.0.1_ with the actual IP address or domain name of the server running Linkalot.
+
 To run Linkalot locally, switch in the terminal to the _linkalot_ directory,  run the `php -S 127.0.0.1:8000` command, and point the browser to the _127.0.0.1:8000_ address.
 
 To install Linkalot on a web server with PHP, move the _linkalot_ directory to the document root of your server.
