@@ -32,7 +32,7 @@
 		<p><button>Edit</button></p>
 	    </form>
 	    <?php
-	    if(isset($_GET["url"]) && isset($_GET['key']) == $key)
+	    if($_GET["url"] && $_GET['key'] == $key)
 	    {
 		$href = '<p><a href="'.$_GET['url'].'" title="'.$_GET['txt'].'">'.$_GET['url'].'</a></p>'."\n";
 		$href .= file_get_contents('links.txt');
