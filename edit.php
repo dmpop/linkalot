@@ -11,7 +11,7 @@ require_once('protect.php');
 	<meta charset="utf-8">
 	<title>Linkalot</title>
 	<link rel="shortcut icon" href="favicon.png" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+	<link rel="stylesheet" href="light.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	 textarea {
