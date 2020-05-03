@@ -11,42 +11,35 @@ require_once('protect.php');
 	<meta charset="utf-8">
 	<title>Linkalot</title>
 	<link rel="shortcut icon" href="favicon.png" />
-	<link rel="stylesheet" href="light.min.css">
+	<link rel="stylesheet" href="lit.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-	 textarea {
-	     font-size: 15px;
-	     height: 55%;
-	     line-height: 1.9;
-	 }
-	</style>
     </head>
     <body>
-	<h1>Linkalot</h1>
-	<form method="GET" action="index.php">
-	    <p><button>Back</button></p>
-        </form>
-        <?php
-        function Read() {
-	    $f = "links.txt";
-            echo file_get_contents($f);
-        }
-        function Write() {
-	    $f = "links.txt";
-            $fp = fopen($f, "w");
-            $data = $_POST["text"];
-            fwrite($fp, $data);
-            fclose($fp);
-        }
-        if ($_POST["submit_check"]){
-	    Write();
-        };
-        ?>      
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-	    <textarea name="text"><?php Read(); ?></textarea><br /><br />
-	    <button>Save</button>
-	    <input type="hidden" name="submit_check" value="1">
-        </form>
+	<div class="c">
+	    <h1>Linkalot</h1>
+	    <form method="GET" action="index.php">
+		<p><button class="btn">Back</button></p>
+            </form>
+            <?php
+            function Read() {
+		$f = "links.txt";
+		echo file_get_contents($f);
+            }
+            function Write() {
+		$f = "links.txt";
+		$fp = fopen($f, "w");
+		$data = $_POST["text"];
+		fwrite($fp, $data);
+		fclose($fp);
+            }
+            if ($_POST["save"]){
+		Write();
+            };
+            ?>      
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+		<textarea class="w-100" name="text"><?php Read(); ?></textarea><br /><br />
+		<input class="btn primary" type="submit" name="save" value="Save">
+            </form>
 	</div>
     </body>
 </html>

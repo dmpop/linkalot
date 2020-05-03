@@ -24,14 +24,16 @@ if (isset($_POST['password']) && $_POST['password'] == $passwd) {
 	    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	    <meta name="viewport" content="width=device-width">
 	    <link rel="shortcut icon" href="favicon.png" />
-	    <link rel="stylesheet" href="light.min.css">
+	    <link rel="stylesheet" href="lit.css">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title><?php echo $title ?></title>
 	</head>
     </head>
     <body>
+	<div class="c">
         <form method="POST">
-			Password: <input type="password" name="password">
+	    Password: <input type="password" name="password">
         </form>
+	</div>
     </body>
 </html>

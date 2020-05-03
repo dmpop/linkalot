@@ -14,22 +14,22 @@
 	<meta charset="utf-8">
 	<title>Linkalot</title>
 	<link rel="shortcut icon" href="favicon.png" />
-	<link rel="stylesheet" href="light.min.css">
+	<link rel="stylesheet" href="lit.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		.heart {
-			fill: red;
-			position: relative;
-			top: 5px;
-			width: 21px;
-			}
+	 .heart {
+	     fill: red;
+	     position: relative;
+	     top: 5px;
+	     width: 21px;
+	 }
 	</style>
     </head>
     <body>
-	<div style="margin-top: 1em; font-size: 1.1em;">
+	<div class="c">
 	    <h1><?php echo $title ?></h1>
 	    <form method='GET' action='edit.php'>
-		<p><button>Edit</button></p>
+		<p><button class="btn primary">Edit</button></p>
 	    </form>
 	    <?php
 	    if(isset($_GET["url"]) && $_GET['key'] == $key)
