@@ -37,7 +37,7 @@ require_once('protect.php');
             };
             ?>      
             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-		<textarea class="w-100" name="text"><?php Read(); ?></textarea><br /><br />
+		<textarea class="w-100" style="height: 25em; line-height: 1.9;" name="text"><?php Read(); ?></textarea><br /><br />
 		<input class="btn primary" type="submit" name="save" value="Save">
             </form>
 	</div>
