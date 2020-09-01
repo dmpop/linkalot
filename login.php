@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+$config = include('config.php');
 
 /* Redirects here after login */
 $redirect_after_login = 'edit.php';
@@ -19,22 +19,27 @@ if (isset($_POST['password']) && $_POST['password'] == $passwd) {
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-	<head>
-	    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	    <meta name="viewport" content="width=device-width">
-	    <link rel="shortcut icon" href="favicon.png" />
-	    <link rel="stylesheet" href="lit.css">
-	    <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title><?php echo $title ?></title>
-	</head>
-    </head>
-    <body>
-	<div class="c">
-        <form method="POST">
-	    Password: <input type="password" name="password">
-        </form>
-	</div>
-    </body>
+
+<head>
+    <title><?php echo $title ?></title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-margin-small-top">
+        <div class="uk-card uk-card-default uk-card-body">
+            <h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
+            <form class="uk-text-center" method="POST">
+                <p>Type password and press ENTER:</p>
+                <input class=uk-input" type="password" name="password">
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>
