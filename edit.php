@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR);
+include('config.php');
 require_once('protect.php');
 ?>
 
