@@ -9,14 +9,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="173.1131mm"
-   height="173.1131mm"
-   viewBox="0 0 173.1131 173.1131"
+   width="164.87158mm"
+   height="164.87158mm"
+   viewBox="0 0 164.87158 164.87158"
    version="1.1"
    id="svg8"
    inkscape:export-filename="/home/dmpop/favicon.png"
-   inkscape:export-xdpi="75.123146"
-   inkscape:export-ydpi="75.123146"
+   inkscape:export-xdpi="78.878365"
+   inkscape:export-ydpi="78.878365"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
    sodipodi:docname="favicon.svg">
   <defs
@@ -26,7 +26,7 @@
        inkscape:vp_x="0 : 65.011907 : 1"
        inkscape:vp_y="0 : 1000.0001 : 0"
        inkscape:vp_z="103.56549 : -49.136908 : 1"
-       inkscape:persp3d-origin="65.011906 : 43.341271 : 1"
+       inkscape:persp3d-origin="65.011905 : 43.341271 : 1"
        id="perspective9439" />
     <symbol
        id="Coffeeshop_Inv">
@@ -83,8 +83,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-584.7071"
-     inkscape:cy="83.784056"
+     inkscape:cx="-736.78199"
+     inkscape:cy="68.209528"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -92,8 +92,8 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -113,15 +113,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(830.26758,-30.731924)">
-    <rect
-       style="fill:#d5f6ff;fill-opacity:1;stroke:none;stroke-width:1.17299998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect828"
-       width="173.1131"
-       height="173.1131"
-       x="-830.26758"
-       y="30.731924"
-       ry="18.142857" />
+     transform="translate(825.44936,-34.852689)">
     <path
        sodipodi:type="star"
        style="fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.17299998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -139,11 +131,11 @@
        d="m -680.48069,167.24745 c -5.27724,6.04206 -20.88407,-6.13428 -27.64979,-1.82373 -6.76572,4.31054 -2.32471,23.60079 -10.0308,25.8306 -7.70608,2.22981 -14.25235,-16.45126 -22.2745,-16.48283 -8.02214,-0.0316 -14.71522,18.59742 -22.40352,16.30703 -7.6883,-2.29039 -3.09562,-21.54509 -9.82721,-25.90874 -6.7316,-4.36366 -22.43376,7.68949 -27.66329,1.60608 -5.22953,-6.0834 9.04395,-19.7985 5.74014,-27.10881 -3.3038,-7.31031 -23.02972,-5.65979 -24.14015,-13.60478 -1.11043,-7.94498 18.31213,-11.76603 19.48505,-19.70203 1.17291,-7.935995 -16.31393,-17.212129 -12.95269,-24.496215 3.36123,-7.284087 21.76634,0.0021 27.04358,-6.039989 5.27725,-6.042061 -4.41856,-23.29974 2.34716,-27.610284 6.76573,-4.310544 18.30989,11.769518 26.01598,9.539705 7.70608,-2.229812 8.87966,-21.989846 16.9018,-21.95828 8.02215,0.03157 9.04018,19.800224 16.72848,22.090611 7.6883,2.290386 19.35865,-13.698331 26.09024,-9.334678 6.7316,4.363655 -3.09972,21.544499 2.12981,27.627903 5.22953,6.083404 23.69141,-1.057692 26.99522,6.25262 3.3038,7.310313 -14.2555,16.448548 -13.14507,24.393527 1.11043,7.94499 20.50232,11.91876 19.3294,19.85476 -1.17291,7.936 -20.88524,6.1303 -24.24647,13.41438 -3.36123,7.28409 10.80388,21.11109 5.52663,27.15315 z"
        inkscape:transform-center-x="2.0829719"
        inkscape:transform-center-y="2.8164767"
-       transform="matrix(1.0371237,-0.16215478,0.16215478,1.0371237,3.8132906,-122.19097)" />
+       transform="matrix(1.0371237,-0.16215478,0.16215478,1.0371237,4.5107216,-122.19096)" />
     <circle
        style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:9.61091995;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path9455-5"
-       cx="-743.711"
+       cx="-743.01355"
        cy="117.28848"
        r="47.225079" />
   </g>

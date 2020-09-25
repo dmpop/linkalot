@@ -19,26 +19,38 @@ include('config.php');
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+	<style>
+		.uk-button {
+			width: 11em;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="uk-container uk-margin-small-top">
 		<div class="uk-card uk-card-default uk-card-body">
 			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
+			<?php
+			$f = file("links.txt");
+			$rnd_link = $f[array_rand($f)];
+			echo '<div class="uk-card uk-card-default uk-card-body uk-text-center">';
+			echo 'Random <span uk-icon="icon:link"></span> ' . $rnd_link;
+			echo "</div>";
+			?>
 			<form method='GET' action='edit.php'>
-				<button class="uk-button uk-button-primary uk-margin-top">Edit</button>
+				<button class="uk-button uk-button-primary uk-margin-top">Edit links</button>
+			</form>
+			<form method='GET' action='filtered.php'>
+				<input class="uk-input" type='text' name='tag'>
+				<button class="uk-button uk-button-secondary uk-margin-top">Filter links</button>
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '" title="' . $_GET['txt'] . '">' . $_GET['url'] . '</a><em>'. $_GET['tag'] . '</em></p>' . "\n";
+				$href = '<p><a href="' . $_GET['url'] . '" title="' . $_GET['txt'] . '">' . $_GET['url'] . '</a><em>' . $_GET['tag'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<h2>Link added</h2>";
 			}
-			$f = file("links.txt");
-			$rnd_link = $f[array_rand($f)];
-			echo "Random link <span uk-icon='arrow-down'></span>" . $rnd_link;
-			echo "<hr />";
 			$f = fopen("links.txt", "r");
 			if ($f) {
 				while (($line = fgets($f)) !== false) {
