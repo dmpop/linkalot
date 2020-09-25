@@ -33,6 +33,12 @@ If you want the bookmarklet to automatically extract description from the page, 
 javascript:var%20text=prompt("Description",document.querySelector('meta[name="description"]').content);location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)
 ```
 
+And the following bookmarklet fetches the text selection in the current page and saves fhe link using the selected text as its description. The bookmarklet also allows you to add tags to the link.
+
+```javascript
+javascript:var%20text=window.getSelection();var%20tag=prompt("Tags:","");location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)+'&tag= '+escape(tag)
+```
+
 Linkalot also works with the [Send Tab URL](https://addons.mozilla.org/en-US/firefox/addon/send-tab-url/) add-on for Firefox. You can use this extension instead of the bookmarklet. In the add-on's **Preferences** section, add the following URL:
 
     https://127.0.0.1/linkalot/?url={URL}&txt={TITLE}&key=SECRET

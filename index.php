@@ -30,7 +30,7 @@ include('config.php');
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '" title="' . $_GET['txt'] . '">' . $_GET['url'] . '</a></p>' . "\n";
+				$href = '<p><a href="' . $_GET['url'] . '" title="' . $_GET['txt'] . '">' . $_GET['url'] . '</a><em>'. $_GET['tag'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<h2>Link added</h2>";
