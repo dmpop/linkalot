@@ -51,6 +51,9 @@ require_once('protect.php');
 			}
 			if ($_POST["save"]) {
 				Write();
+				echo "<script>";
+				echo "UIkit.notification({message: 'Changes saved.'});";
+				echo "</script>";
 			};
 			?>
 			<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
