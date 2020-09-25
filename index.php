@@ -33,7 +33,7 @@ include('config.php');
 			<?php
 			$f = file("links.txt");
 			$rnd_link = $f[array_rand($f)];
-			echo '<div class="uk-card uk-card-default uk-card-body uk-text-center">';
+			echo '<div class="uk-card uk-card-body uk-text-center">';
 			echo 'Random <span uk-icon="icon:link"></span> ' . $rnd_link;
 			echo "</div>";
 			?>

@@ -22,7 +22,7 @@ require_once('protect.php');
 <body>
 	<div class="uk-container uk-margin-small-top">
 		<div class="uk-card uk-card-default uk-card-body">
-			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?>: filtered by <em><?php echo $_GET['tag'] ?></em></span></h1>
+			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?>: <em><?php echo $_GET['tag'] ?></em></span></h1>
 			<p class="uk-margin-bottom"><a class="uk-button uk-button-primary uk-margin-top" href="index.php">Back</a></p>
 			<?php
 			if (isset($_GET['tag'])) {
