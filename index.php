@@ -19,11 +19,6 @@ include('config.php');
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
-	<style>
-		.uk-button {
-			width: 11em;
-		}
-	</style>
 </head>
 
 <body>
@@ -39,12 +34,12 @@ include('config.php');
 			?>
 			<form method='GET' action='filtered.php'>
 				<input class="uk-input" type='text' name='tag'>
-				<button class="uk-button uk-button-primary uk-margin-top">Filter links</button>
-				<a class="uk-button uk-button-secondary uk-margin-top" href="edit.php">Edit links</a>
+				<button class="uk-button uk-button-primary uk-margin-top">Filter</button>
+				<a class="uk-button uk-button-secondary uk-margin-top" href="edit.php">Edit</a>
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '" title="' . $_GET['txt'] . '">' . $_GET['url'] . '</a><em>' . $_GET['tag'] . '</em></p>' . "\n";
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a><em>' . $_GET['tag'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<h2>Link added</h2>";
