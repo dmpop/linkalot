@@ -42,7 +42,9 @@ include('config.php');
 				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a><em>' . $_GET['tag'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
-				echo "<h2>Link added</h2>";
+				echo "<script>";
+				echo "UIkit.notification({message: 'Link has been saved', status: 'success'});";
+				echo "</script>";
 			}
 			$f = fopen("links.txt", "r");
 			if ($f) {
@@ -51,7 +53,9 @@ include('config.php');
 				}
 				fclose($f);
 			} else {
-				echo "<h2>Error</h2>";
+				echo "<script>";
+				echo "UIkit.notification({message: 'No links found', status: 'warning'});";
+				echo "</script>";
 			}
 			?>
 			<hr />
