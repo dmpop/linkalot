@@ -32,9 +32,7 @@ require_once('protect.php');
 	<div class="uk-container uk-margin-small-top">
 		<div class="uk-card uk-card-default uk-card-body">
 			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
-			<form method="GET" action="index.php">
-				<button class="uk-button uk-button-default uk-margin-top">Back</button>
-			</form>
+			<a class="uk-button uk-button-default uk-margin-bottom" href="index.php">Back</a>
 			<?php
 			function Read()
 			{
@@ -58,7 +56,7 @@ require_once('protect.php');
 			?>
 			<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 				<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
-				<input class="uk-button uk-button-primary uk-margin-top" type="submit" name="save" value="Save">
+				<input class="uk-button uk-button-primary" type="submit" name="save" value="Save">
 			</form>
 		</div>
 	</div>

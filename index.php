@@ -37,12 +37,10 @@ include('config.php');
 			echo 'Random <span uk-icon="icon:link"></span> ' . $rnd_link;
 			echo "</div>";
 			?>
-			<form method='GET' action='edit.php'>
-				<button class="uk-button uk-button-primary uk-margin-top">Edit links</button>
-			</form>
 			<form method='GET' action='filtered.php'>
 				<input class="uk-input" type='text' name='tag'>
-				<button class="uk-button uk-button-secondary uk-margin-top">Filter links</button>
+				<button class="uk-button uk-button-primary uk-margin-top">Filter links</button>
+				<a class="uk-button uk-button-secondary uk-margin-top" href="edit.php">Edit links</a>
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
