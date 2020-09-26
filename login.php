@@ -32,7 +32,7 @@ if (isset($_POST['password']) && $_POST['password'] == $passwd) {
 
 <body>
     <div class="uk-container uk-margin-small-top">
-        <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-card uk-card-primary uk-card-body">
             <h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
             <form class="uk-text-center" method="POST">
                 <p>Type password and press ENTER:</p>
