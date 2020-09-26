@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 error_reporting(E_ERROR);
 include('config.php');
 if ($PROTECT) {
-    require_once('protect.php');
+	require_once('protect.php');
 }
 ?>
 
@@ -29,10 +29,15 @@ if ($PROTECT) {
 		<div class="uk-card uk-card-default uk-card-body">
 			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
 			<?php
+			$f = fopen("links.txt", "r");
+			$i = 0;
+			while (($line = fgets($f)) !== false) {
+				$i++;
+			}
 			$f = file("links.txt");
 			$rnd_link = $f[array_rand($f)];
 			echo '<div class="uk-card uk-card-body uk-text-center">';
-			echo 'Random <span uk-icon="icon:link"></span> ' . $rnd_link;
+			echo '<p>Total links: <strong>'.$i.'</strong></p>Random <span uk-icon="icon:link"></span> ' . $rnd_link;
 			echo "</div>";
 			?>
 			<form method='GET' action='filtered.php'>
@@ -42,7 +47,7 @@ if ($PROTECT) {
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a><em>' . $_GET['tag'] . '</em></p>' . "\n";
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a><em>' . $_GET['tags'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
