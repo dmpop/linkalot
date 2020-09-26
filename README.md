@@ -2,13 +2,13 @@
 
 Linkalot is a web-based inbox for your links. Linkalot runs on any machine or web server with PHP. Linkalot's highlights:
 
-- Instantly save links in a link list using the accompanying bookmarklet.
+- Save links in a link list using the accompanying bookmarklet.
 - Add a short description and tags to a link. The description appears as a pop-up when hovering the mouse of the link.
 - All links are saved in a plain text file.
-- Filter links by tag.
+- Filter links by tags.
 - Password-protected editing area for managing the saved links.
 
-<a href="https://i.imgur.com/DowcGPR.png"><img src="https://i.imgur.com/DowcGPR.png" alt="" width="600"/></a>
+<a href="https://i.imgur.com/NL8SqZw.png"><img src="https://i.imgur.com/NL8SqZw.png" alt="" width="600"/></a>
 
 ## Dependencies
 
@@ -23,23 +23,10 @@ Linkalot is a web-based inbox for your links. Linkalot runs on any machine or we
 3. Open the _linkalot/config.php_ file and change example values of the `key` and `passwd` variables.
 
 
-Add the bookmarklet below to the **Bookmarks** toolbar of your browser. (Replace _SECRET_ with the actual value of the `key` variable in _config.php_. Replace _127.0.0.1_ with the actual IP address or domain name of the server running Linkalot.)
+Add the bookmarklet below to the **Bookmarks** toolbar of your browser. (Replace _127.0.0.1_ with the actual IP address or domain name of the server running Linkalot.)
 
 ```javascript
-javascript:var%20text=prompt("Description","");location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)
-
-```
-
-If you want the bookmarklet to automatically extract description from the page, use the following bookmarklet (note that it doesn't work is the description is missing):
-
-```javascript
-javascript:var%20text=prompt("Description",document.querySelector('meta[name="description"]').content);location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)
-```
-
-And the following bookmarklet fetches the text selection in the current page and saves fhe link using the selected text as its description. The bookmarklet also allows you to add tags to the link.
-
-```javascript
-javascript:var%20text=window.getSelection();var%20tag=prompt("Tags:","");location.href='https://127.0.0.1/linkalot/?url='+encodeURIComponent(location.href)+'&key=SECRET&txt='+escape(text)+'&tag= '+escape(tag)
+javascript:var%20text=window.getSelection();location.href='https://127.0.0.1/linkalot/```add.php?url='+encodeURIComponent(location.href)+'&txt='+escape(text)
 ```
 
 Linkalot also works with the [Send Tab URL](https://addons.mozilla.org/en-US/firefox/addon/send-tab-url/) add-on for Firefox. You can use this extension instead of the bookmarklet. In the add-on's **Preferences** section, add the following URL:

@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 error_reporting(E_ERROR);
 include('config.php');
-if ($PROTECT) {
+if ($protect) {
 	require_once('protect.php');
 }
 ?>
@@ -37,17 +37,18 @@ if ($PROTECT) {
 			$f = file("links.txt");
 			$rnd_link = $f[array_rand($f)];
 			echo '<div class="uk-card uk-card-body uk-text-center">';
-			echo '<p>Total links: <strong>'.$i.'</strong></p>Random <span uk-icon="icon:link"></span> ' . $rnd_link;
+			echo '<p>Total links: <strong>'.$i.'</strong></p>Random link:' . $rnd_link;
 			echo "</div>";
 			?>
 			<form method='GET' action='filtered.php'>
-				<input class="uk-input" type='text' name='tag'>
-				<button class="uk-button uk-button-primary uk-margin-top">Filter</button>
-				<a class="uk-button uk-button-secondary uk-margin-top" href="edit.php">Edit</a>
+				<input class="uk-input" type='text' name='filter'>
+				<button class="uk-button uk-button-primary uk-margin-top">Filter list</button>
+				<a class="uk-button uk-button-default uk-margin-top" href="edit.php">Edit list</a>
+				<a class="uk-button uk-button-default uk-margin-top" href="add.php">Add link</a>
 			</form>
 			<?php
 			if (isset($_GET["url"]) && $_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a><em>' . $_GET['tags'] . '</em></p>' . "\n";
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <em>' . $_GET['tags'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
