@@ -47,7 +47,7 @@ if ($protect) {
 				<a class="uk-button uk-button-default uk-margin-top" href="add.php">Add link</a>
 			</form>
 			<?php
-			if (isset($_GET["url"]) && $_GET['key'] == $key) {
+			if (isset($_GET["url"])) {
 				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <em>' . $_GET['tags'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
