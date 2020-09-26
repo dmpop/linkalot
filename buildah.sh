@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-container=$(buildah from opensuse/leap:15.2)
-buildah run $container zypper --non-interactive up
-buildah run $container zypper --non-interactive in php7
+container=$(buildah from alpine:latest)
+buildah run $container apk update
+buildah run $container apk add php-cli
 buildah copy $container . /usr/src/linkalot/
 buildah config --workingdir /usr/src/linkalot $container
 buildah config --port 8000 $container

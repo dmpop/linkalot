@@ -1,9 +1,9 @@
-FROM opensuse/leap:15.2
+FROM alpine:latest
 LABEL maintainer="dmpop@linux.com"
 LABEL version="0.1"
-LABEL description="Linkalot Docker image"
-RUN zypper up
-RUN zypper in -y php7
+LABEL description="Linkalot container image"
+RUN apk update
+RUN apk add php-cli
 COPY . /usr/src/linkalot
 WORKDIR /usr/src/linkalot
 EXPOSE 8000
