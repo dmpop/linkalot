@@ -7,6 +7,4 @@ $footer = "<a href='https://gitlab.com/dmpop/linkalot'>Linkalot</a> - Inbox for 
 $protect = false;
 // Password
 $passwd = "monkey";
-// Unique key for identifying HTTP requests
-$key = "secret";
 ?>

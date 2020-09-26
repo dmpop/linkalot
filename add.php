@@ -30,7 +30,6 @@ require_once('protect.php');
                 <input class="uk-input" type='text' name='txt' value="<?php echo $_GET['txt']; ?>">
                 <label for="tags">Tags:</label>
                 <input class="uk-input" type='text' name='tags' value="<?php echo $_GET['tags']; ?>">
-                <input class="uk-input" type='hidden' name='key' value="<?php echo $key; ?>">
                 <input class="uk-button uk-button-primary uk-margin-top" type="submit" name="add" value="Add">
                 <a class="uk-button uk-button-default uk-margin-top" href="index.php">Back</a>
             </form>
