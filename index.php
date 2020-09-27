@@ -37,7 +37,7 @@ if ($protect) {
 			$f = file("links.txt");
 			$rnd_link = $f[array_rand($f)];
 			echo '<div class="uk-card uk-card-body uk-text-center">';
-			echo '<p>Total links: <strong>'.$i.'</strong></p>Random link:' . $rnd_link;
+			echo '<p>Total links: <strong>' . $i . '</strong></p>Random link:' . $rnd_link;
 			echo "</div>";
 			?>
 			<form method='GET' action='filtered.php'>
@@ -47,7 +47,7 @@ if ($protect) {
 				<a class="uk-button uk-button-default uk-margin-top" href="add.php">Add link</a>
 			</form>
 			<?php
-			if (isset($_GET["url"])) {
+			if ($_GET['key'] == $key) {
 				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <em>' . $_GET['tags'] . '</em></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
