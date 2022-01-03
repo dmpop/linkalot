@@ -1,63 +1,79 @@
 <?php
 error_reporting(E_ERROR);
 include('config.php');
-require_once('protect.php');
 ?>
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="<?php echo $theme; ?>">
+
 <!-- Author: Dmitri Popov, dmpop@linux.com
-         License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
+	 License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
-	<meta charset="utf-8">
-	<title><?php echo $title ?></title>
+	<title><?php echo $title; ?></title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" href="css/classless.css" />
+	<link rel="stylesheet" href="css/themes.css" />
 	<style>
 		textarea {
 			font-size: 15px;
 			width: 100%;
-			height: 55%;
+			height: 25em;
 			line-height: 1.9;
 			margin-top: 2em;
 		}
 	</style>
+	<!-- Suppress form re-submit prompt on refresh -->
+	<script>
+		if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+	</script>
 </head>
 
 <body>
-	<div class="uk-container uk-margin-small-top">
-		<div class="uk-card uk-card-default uk-card-body">
-			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
-			<a class="uk-button uk-button-default uk-margin-bottom" href="index.php">Back</a>
-			<?php
-			function Read()
-			{
-				$f = "links.txt";
-				echo file_get_contents($f);
-			}
-			function Write()
-			{
-				$f = "links.txt";
-				$fp = fopen($f, "w");
-				$data = $_POST["text"];
-				fwrite($fp, $data);
-				fclose($fp);
-			}
-			if ($_POST["save"]) {
-				Write();
+	<div class="card text-center">
+		<div style="margin-top: 1em; margin-bottom: 1em;">
+			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+		</div>
+		<hr style="margin-bottom: 2em;">
+		<button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
+		<?php
+		function Read()
+		{
+			$f = "links.txt";
+			echo file_get_contents($f);
+		}
+		function Write()
+		{
+			$f = "links.txt";
+			$fp = fopen($f, "w");
+			$data = $_POST["text"];
+			fwrite($fp, $data);
+			fclose($fp);
+		}
+		if (isset($_POST["save"])) {
+			if ($_POST['password'] != $password) {
 				echo "<script>";
-				echo "UIkit.notification({message: 'Changes saved', status: 'success'});";
+				echo "alert('Wrong password');";
 				echo "</script>";
-			};
-			?>
-			<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-				<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
-				<input class="uk-button uk-button-primary" type="submit" name="save" value="Save">
-			</form>
+				exit();
+			}
+			Write();
+			header('Location:index.php');
+		};
+		?>
+		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+			<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password">
+			<button type="submit" name="save">Save</button>
+		</form>
+		<div style="margin-bottom: 1em; margin-top: 1em;">
+			<?php echo $footer; ?>
 		</div>
 	</div>
 </body>

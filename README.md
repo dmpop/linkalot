@@ -8,8 +8,6 @@ Linkalot is a web-based inbox for your links. Linkalot runs on any machine or we
 - Filter links by tags.
 - Password-protection for adding and managing links.
 
-<a href="https://i.imgur.com/AlToIZS.png"><img src="https://i.imgur.com/AlToIZS.png" alt="" width="600"/></a>
-
 ## Dependencies
 
 - PHP

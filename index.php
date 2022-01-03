@@ -3,56 +3,60 @@
 header('Access-Control-Allow-Origin: *');
 error_reporting(E_ERROR);
 include('config.php');
-if ($protect) {
-	require_once('protect.php');
-}
 ?>
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="<?php echo $theme; ?>">
 
 <!-- Author: Dmitri Popov, dmpop@linux.com
-         License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
+	 License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
-	<meta charset="utf-8">
-	<title><?php echo $title ?></title>
+	<title><?php echo $title; ?></title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" href="css/classless.css" />
+	<link rel="stylesheet" href="css/themes.css" />
+	<!-- Suppress form re-submit prompt on refresh -->
+	<script>
+		if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+	</script>
 </head>
 
 <body>
-	<div class="uk-container uk-margin-small-top">
-		<div class="uk-card uk-card-default uk-card-body">
-			<h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
+	<div class="card text-center">
+		<div style="margin-top: 1em; margin-bottom: 1em;">
+			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+		</div>
+		<hr style="margin-bottom: 2em;">
+		<?php
+		$f = fopen("links.txt", "r");
+		$i = 0;
+		while (($line = fgets($f)) !== false) {
+			$i++;
+		}
+		$f = file("links.txt");
+		$rnd_link = $f[array_rand($f)];
+		echo '<p>Total links: <strong>' . $i . '</strong></p>Random link:' . $rnd_link;
+		?>
+		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filtered.php'>
+			<input type='text' name='filter'>
+			<button>Filter list</button>
+		</form>
+		<button onclick='window.location.href = "edit.php"'>Edit list</button>
+		<button onclick='window.location.href = "add.php"'>Add link</button>
+		<div class="text-left">
 			<?php
-			$f = fopen("links.txt", "r");
-			$i = 0;
-			while (($line = fgets($f)) !== false) {
-				$i++;
-			}
-			$f = file("links.txt");
-			$rnd_link = $f[array_rand($f)];
-			echo '<div class="uk-card uk-card-body uk-text-center">';
-			echo '<p>Total links: <strong>' . $i . '</strong></p>Random link:' . $rnd_link;
-			echo "</div>";
-			?>
-			<form method='GET' action='filtered.php'>
-				<input class="uk-input" type='text' name='filter'>
-				<button class="uk-button uk-button-primary uk-margin-top">Filter list</button>
-				<a class="uk-button uk-button-default uk-margin-top" href="edit.php">Edit list</a>
-				<a class="uk-button uk-button-default uk-margin-top" href="add.php">Add link</a>
-			</form>
-			<?php
-			if ($_GET['key'] == $key) {
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <em>' . $_GET['tags'] . '</em></p>' . "\n";
+			if ($_GET['password'] == $password) {
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <kbd>' . $_GET['tags'] . '</kbd></p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
-				echo "UIkit.notification({message: 'Link has been saved', status: 'success'});";
+				echo "alert('Link has been saved');";
 				echo "</script>";
 			}
 			$f = fopen("links.txt", "r");
@@ -63,12 +67,13 @@ if ($protect) {
 				fclose($f);
 			} else {
 				echo "<script>";
-				echo "UIkit.notification({message: 'No links found', status: 'warning'});";
+				echo "alert('No links found');";
 				echo "</script>";
 			}
 			?>
-			<hr />
-			<p><?php echo $footer; ?></p>
+		</div>
+		<div style="margin-bottom: 1em;">
+			<?php echo $footer; ?>
 		</div>
 	</div>
 </body>

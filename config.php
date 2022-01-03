@@ -2,11 +2,8 @@
 // Title
 $title = "Linkalot";
 // Footer text
-$footer = "<a href='https://gitlab.com/dmpop/linkalot'>Linkalot</a> - Inbox for your links";
+$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 // Set to true to make the link list private
 $protect = false;
 // Password
-$passwd = "monkey";
-// Key for authenticating HTTP requests
-$key = "secret";
-?>
+$password = "password";

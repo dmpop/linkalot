@@ -1,39 +1,52 @@
 <?php
 error_reporting(E_ERROR);
 include('config.php');
-require_once('protect.php');
 ?>
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="<?php echo $theme; ?>">
+
 <!-- Author: Dmitri Popov, dmpop@linux.com
-         License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
+	 License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
-    <meta charset="utf-8">
-    <title><?php echo $title ?></title>
+    <title><?php echo $title; ?></title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/classless.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <!-- Suppress form re-submit prompt on refresh -->
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </head>
 
 <body>
-    <div class="uk-container uk-margin-small-top uk-container-xsmall">
-        <div class="uk-card uk-card-primary uk-card-body">
-            <h1 class="uk-heading-line uk-text-center"><span><?php echo $title ?></span></h1>
-            <form action="index.php" method="GET">
+    <div class="card text-center">
+        <div style="margin-top: 1em; margin-bottom: 1em;">
+            <img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
+            <h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+        </div>
+        <hr style="margin-bottom: 2em;">
+        <div class="text-left">
+            <form style="display: inline;" action="index.php" method="GET">
                 <label for="url">URL:</label>
-                <input class="uk-input" type='text' name='url' value="<?php echo $_GET['url']; ?>">
+                <input name='url' id='url' value="<?php echo $_GET['url']; ?>">
                 <label for="txt">Title:</label>
-                <input class="uk-input" type='text' name='txt' value="<?php echo $_GET['txt']; ?>">
+                <input name='txt' id='txt' value="<?php echo $_GET['txt']; ?>">
                 <label for="tags">Tags:</label>
-                <input class="uk-input" type='text' name='tags' value="<?php echo $_GET['tags']; ?>">
-                <input class="uk-input" type='hidden' name='key' value="<?php echo $key; ?>">
-                <input class="uk-button uk-button-primary uk-margin-top" type="submit" name="add" value="Add">
-                <a class="uk-button uk-button-default uk-margin-top" href="index.php">Back</a>
-            </form>
+                <input name='tags' id='tags' value="<?php echo $_GET['tags']; ?>">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+        </div>
+        <button type="submit" name="add">Add</button>
+        </form>
+        <button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
+        <div style="margin-bottom: 1em; margin-top: 1em;">
+            <?php echo $footer; ?>
         </div>
     </div>
 </body>
