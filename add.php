@@ -37,7 +37,7 @@ include('config.php');
                 <input name='url' id='url' value="<?php echo $_GET['url']; ?>">
                 <label for="txt">Title:</label>
                 <input name='txt' id='txt' value="<?php echo $_GET['txt']; ?>">
-                <label for="tags">Tags:</label>
+                <label for="tags">Tags (comma-separated):</label>
                 <input name='tags' id='tags' value="<?php echo $_GET['tags']; ?>">
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">

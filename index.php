@@ -52,7 +52,14 @@ include('config.php');
 		<div class="text-left">
 			<?php
 			if ($_GET['password'] == $password) {
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> <kbd>' . $_GET['tags'] . '</kbd></p>' . "\n";
+
+				$tags = explode(", ", $_GET['tags']);
+
+				foreach ($tags as $tag) {
+					$all_tags = $all_tags . "<kbd>$tag</kbd> ";
+				}
+
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . "\n";
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
