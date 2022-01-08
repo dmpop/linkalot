@@ -54,9 +54,9 @@ include('config.php');
 			if ($_GET['password'] == $password) {
 				$tags = explode(", ", $_GET['tags']);
 				foreach ($tags as $tag) {
-					$all_tags = $all_tags . "<kbd>$tag</kbd> ";
+					$all_tags = $all_tags . "<a style='text-decoration: none; color: #d400aa;' href='filtered.php?filter=".$tag."'><kbd>$tag</kbd></a> ";
 				}
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . "\n";
+				$href = PHP_EOL . '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
