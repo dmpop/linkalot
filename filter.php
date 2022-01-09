@@ -16,6 +16,12 @@ include('config.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/classless.css" />
 	<link rel="stylesheet" href="css/themes.css" />
+	<style>
+		a.tag {
+			text-decoration: none;
+			color: #d400aa;
+		}
+	</style>
 	<!-- Suppress form re-submit prompt on refresh -->
 	<script>
 		if (window.history.replaceState) {
@@ -35,7 +41,7 @@ include('config.php');
 		<div class="text-left">
 			<?php
 			if (isset($_GET['filter'])) {
-				$f = fopen("links.txt", "r");
+				$f = fopen($link_file, "r");
 				while (($line = fgets($f)) !== false) {
 					if (strpos($line, $_GET['filter']) !== false) {
 						echo $line;

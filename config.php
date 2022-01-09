@@ -3,7 +3,7 @@
 $title = "Linkalot";
 // Footer text
 $footer = "Read the <a href='https://dmpop.gumroad.com/l/php-right-away'>PHP Right Away</a> book";
-// Set to true to make the link list private
-$protect = false;
+// File for storing links
+$link_file = "links.txt";
 // Password
 $password = "password";

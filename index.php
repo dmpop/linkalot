@@ -40,13 +40,19 @@ include('config.php');
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
-		$lines = file("links.txt");
+		if (file_exists($link_file)) {
+			$lines = file($link_file);
+		} else {
+			echo "<script>";
+			echo "alert('No links found');";
+			echo "</script>";
+		}
 		$rnd_link = $lines[array_rand($lines)];
 		echo '<p>Total links: <strong>' . count($lines) . '</strong></p>';
 		echo '<p>Random link</p>';
 		echo '<p>' . $rnd_link . '</p>';
 		?>
-		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filtered.php'>
+		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filter.php'>
 			<input type='text' name='filter'>
 			<button>Filter list</button>
 		</form>
@@ -54,10 +60,15 @@ include('config.php');
 		<button onclick='window.location.href = "add.php"'>Add link</button>
 		<div class="text-left">
 			<?php
+
+			foreach ($lines as $line) {
+				echo $line;
+			}
+
 			if ($_GET['password'] == $password) {
 				$tags = explode(", ", $_GET['tags']);
 				foreach ($tags as $tag) {
-					$all_tags = $all_tags . "<a class='tag' href='filtered.php?filter=" . $tag . "'><kbd>$tag</kbd></a> ";
+					$all_tags = $all_tags . "<a class='tag' href='filter.php?filter=" . $tag . "'><kbd>$tag</kbd></a> ";
 				}
 				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
 				$href .= file_get_contents('links.txt');
@@ -69,17 +80,6 @@ include('config.php');
 			if (isset($_GET['password']) && ($_GET['password'] != $password)) {
 				echo "<script>";
 				echo "alert('Wrong password!');";
-				echo "</script>";
-			}
-			$lines = fopen("links.txt", "r");
-			if ($lines) {
-				while (($line = fgets($lines)) !== false) {
-					echo $line;
-				}
-				fclose($lines);
-			} else {
-				echo "<script>";
-				echo "alert('No links found');";
 				echo "</script>";
 			}
 			?>
