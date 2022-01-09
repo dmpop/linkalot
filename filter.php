@@ -36,18 +36,17 @@ include('config.php');
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
 			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
 		</div>
-		<hr style="margin-bottom: 2em;">
-		<button title="Back" style="margin-top: 1em;" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
+		<hr style="margin-bottom: 1em;">
+		<button title="Back" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<div class="text-left">
 			<?php
 			if (isset($_GET['filter'])) {
-				$f = fopen($link_file, "r");
-				while (($line = fgets($f)) !== false) {
+				$lines = file($link_file);
+				foreach ($lines as $line) {
 					if (strpos($line, $_GET['filter']) !== false) {
 						echo $line;
 					}
 				}
-				fclose($f);
 			}
 			?>
 		</div>
