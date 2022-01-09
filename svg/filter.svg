@@ -9,7 +9,6 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="24"
    height="24"
-   stroke-width="1.5"
    viewBox="0 0 24 24"
    fill="none"
    version="1.1"
@@ -38,22 +37,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="12"
      inkscape:cy="12"
-     inkscape:window-x="2560"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
   <path
-     d="M2.99997 7V4C2.99997 3.44772 3.44769 3 3.99997 3H20.0001C20.5523 3 21 3.44766 21.0001 3.9999L21.0004 7M2.99997 7L9.65077 12.7007C9.87241 12.8907 9.99998 13.168 9.99998 13.4599V19.7192C9.99998 20.3698 10.6114 20.8472 11.2425 20.6894L13.2425 20.1894C13.6877 20.0781 14 19.6781 14 19.2192V13.46C14 13.168 14.1275 12.8907 14.3492 12.7007L21.0004 7M2.99997 7H21.0004"
-     stroke="currentColor"
+     d="M3 4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V6.58579C21 6.851 20.8946 7.10536 20.7071 7.29289L14.2929 13.7071C14.1054 13.8946 14 14.149 14 14.4142V17L10 21V14.4142C10 14.149 9.89464 13.8946 9.70711 13.7071L3.29289 7.29289C3.10536 7.10536 3 6.851 3 6.58579V4Z"
+     stroke="#4A5568"
+     stroke-width="2"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path2"
-     style="stroke:#d400aa;stroke-opacity:1" />
+     style="stroke:#0077cc;stroke-opacity:1" />
 </svg>

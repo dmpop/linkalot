@@ -9,15 +9,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="24"
    height="24"
-   stroke-width="1.5"
    viewBox="0 0 24 24"
    fill="none"
    version="1.1"
-   id="svg6"
+   id="svg4"
    sodipodi:docname="edit.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
-     id="metadata12">
+     id="metadata10">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -28,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs10" />
+     id="defs8" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,29 +37,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     id="namedview8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="12"
      inkscape:cy="12"
-     inkscape:window-x="2560"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="svg4" />
   <path
-     d="M3 21L12 21H21"
-     stroke="currentColor"
+     d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z"
+     stroke="#4A5568"
+     stroke-width="2"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path2"
-     style="stroke:#d400aa;stroke-opacity:1" />
-  <path
-     d="M12.2218 5.82839L15.0503 2.99996L20 7.94971L17.1716 10.7781M12.2218 5.82839L6.61522 11.435C6.42769 11.6225 6.32233 11.8769 6.32233 12.1421L6.32233 16.6776L10.8579 16.6776C11.1231 16.6776 11.3774 16.5723 11.565 16.3847L17.1716 10.7781M12.2218 5.82839L17.1716 10.7781"
-     stroke="currentColor"
-     stroke-linecap="round"
-     stroke-linejoin="round"
-     id="path4"
-     style="stroke:#d400aa;stroke-opacity:1" />
+     style="stroke:#0077cc;stroke-opacity:1" />
 </svg>

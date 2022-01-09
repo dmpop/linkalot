@@ -9,15 +9,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="24"
    height="24"
-   stroke-width="1.5"
    viewBox="0 0 24 24"
    fill="none"
    version="1.1"
-   id="svg6"
+   id="svg4"
    sodipodi:docname="add.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
-     id="metadata12">
+     id="metadata10">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -28,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs10" />
+     id="defs8" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,29 +37,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     id="namedview8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="12"
      inkscape:cy="12"
-     inkscape:window-x="2560"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="svg4" />
   <path
-     d="M8 12H12M16 12H12M12 12V8M12 12V16"
-     stroke="currentColor"
+     d="M12 9V12M12 12V15M12 12H15M12 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+     stroke="#4A5568"
+     stroke-width="2"
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path2"
-     style="stroke:#d400aa;stroke-opacity:1" />
-  <path
-     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-     stroke="currentColor"
-     stroke-linecap="round"
-     stroke-linejoin="round"
-     id="path4"
-     style="stroke:#d400aa;stroke-opacity:1" />
+     style="stroke:#0077cc;stroke-opacity:1" />
 </svg>
