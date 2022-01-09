@@ -37,7 +37,7 @@ include('config.php');
 			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
-		<button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
+		<button title="Back" style="margin-top: 1em;" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<div class="text-left">
 			<?php
 			if (isset($_GET['filter'])) {

@@ -40,7 +40,7 @@ include('config.php');
 			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
-		<button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
+		<button title="Back" style="margin-top: 1em;" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<?php
 		function Read()
 		{
@@ -70,7 +70,7 @@ include('config.php');
 			<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
 			<label for="password">Password:</label>
 			<input type="password" name="password" id="password">
-			<button type="submit" name="save">Save</button>
+			<button title="Save changes" type="submit" name="save"><img style='vertical-align: middle;' src='svg/save.svg' /></button>
 		</form>
 		<div style="margin-bottom: 1em; margin-top: 1em;">
 			<?php echo $footer; ?>

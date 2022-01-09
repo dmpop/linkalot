@@ -49,15 +49,17 @@ include('config.php');
 		}
 		$rnd_link = $lines[array_rand($lines)];
 		echo '<p>Total links: <strong>' . count($lines) . '</strong></p>';
-		echo '<p>Random link</p>';
+		echo '<p>Random link:</p>';
 		echo '<p>' . $rnd_link . '</p>';
 		?>
 		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filter.php'>
-			<input type='text' name='filter'>
-			<button>Filter list</button>
+			<label for="filter">Filter:</label>
+			<input type='text' name='filter' id='filter'>
+			<button title="Filter links"><img style=' vertical-align: middle;' src='svg/filter.svg' /></button>
 		</form>
-		<button onclick='window.location.href = "edit.php"'>Edit list</button>
-		<button onclick='window.location.href = "add.php"'>Add link</button>
+		<button title="Edit link list" onclick='window.location.href = "edit.php"'><img style='vertical-align: middle;' src='svg/edit.svg' /></button>
+		<button title="Add new link" onclick='window.location.href = "add.php"'><img style='vertical-align: middle;' src='svg/add.svg' /></button>
+		<hr style="margin-top: 2em; margin-bottom: 2em;">
 		<div class="text-left">
 			<?php
 

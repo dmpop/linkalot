@@ -42,9 +42,9 @@ include('config.php');
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
         </div>
-        <button type="submit" name="add">Add</button>
+        <button title="Save the link" type="submit" name="add"><img style='vertical-align: middle;' src='svg/save.svg' /></button>
         </form>
-        <button style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
+        <button title="Back" style="margin-top: 1em;" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
         <div style="margin-bottom: 1em; margin-top: 1em;">
             <?php echo $footer; ?>
         </div>
