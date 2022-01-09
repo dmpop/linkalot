@@ -18,6 +18,12 @@ include('config.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/classless.css" />
 	<link rel="stylesheet" href="css/themes.css" />
+	<style>
+		a.tag {
+			text-decoration: none;
+			color: #d400aa;
+		}
+	</style>
 	<!-- Suppress form re-submit prompt on refresh -->
 	<script>
 		if (window.history.replaceState) {
@@ -34,14 +40,11 @@ include('config.php');
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
-		$f = fopen("links.txt", "r");
-		$i = 0;
-		while (($line = fgets($f)) !== false) {
-			$i++;
-		}
-		$f = file("links.txt");
-		$rnd_link = $f[array_rand($f)];
-		echo '<p>Total links: <strong>' . $i . '</strong></p>Random link:' . $rnd_link;
+		$lines = file("links.txt");
+		$rnd_link = $lines[array_rand($lines)];
+		echo '<p>Total links: <strong>' . count($lines) . '</strong></p>';
+		echo '<p>Random link</p>';
+		echo '<p>' . $rnd_link . '</p>';
 		?>
 		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filtered.php'>
 			<input type='text' name='filter'>
@@ -54,26 +57,26 @@ include('config.php');
 			if ($_GET['password'] == $password) {
 				$tags = explode(", ", $_GET['tags']);
 				foreach ($tags as $tag) {
-					$all_tags = $all_tags . "<a style='text-decoration: none; color: #d400aa;' href='filtered.php?filter=".$tag."'><kbd>$tag</kbd></a> ";
+					$all_tags = $all_tags . "<a class='tag' href='filtered.php?filter=" . $tag . "'><kbd>$tag</kbd></a> ";
 				}
-				$href = PHP_EOL . '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
+				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
 				echo "<script>";
 				echo "alert('Link has been added.');";
 				echo "</script>";
-			} 
+			}
 			if (isset($_GET['password']) && ($_GET['password'] != $password)) {
 				echo "<script>";
 				echo "alert('Wrong password!');";
 				echo "</script>";
 			}
-			$f = fopen("links.txt", "r");
-			if ($f) {
-				while (($line = fgets($f)) !== false) {
+			$lines = fopen("links.txt", "r");
+			if ($lines) {
+				while (($line = fgets($lines)) !== false) {
 					echo $line;
 				}
-				fclose($f);
+				fclose($lines);
 			} else {
 				echo "<script>";
 				echo "alert('No links found');";
