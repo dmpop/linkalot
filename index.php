@@ -75,9 +75,7 @@ include('config.php');
 				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
 				$href .= file_get_contents('links.txt');
 				file_put_contents('links.txt', $href);
-				echo "<script>";
-				echo "alert('Link has been added.');";
-				echo "</script>";
+				echo '<meta http-equiv="refresh" content="0; url=' . $_GET['url'] . '">';
 			}
 			if (isset($_GET['password']) && ($_GET['password'] != $password)) {
 				echo "<script>";

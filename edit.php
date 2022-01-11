@@ -1,6 +1,17 @@
 <?php
 error_reporting(E_ERROR);
 include('config.php');
+
+if (isset($_POST["save"])) {
+	if ($_POST['password'] != $password) {
+		echo "<script>";
+		echo "alert('Wrong password');";
+		echo "</script>";
+		exit();
+	}
+	Write();
+	header('Location:index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,21 +66,12 @@ include('config.php');
 			fwrite($fp, $data);
 			fclose($fp);
 		}
-		if (isset($_POST["save"])) {
-			if ($_POST['password'] != $password) {
-				echo "<script>";
-				echo "alert('Wrong password');";
-				echo "</script>";
-				exit();
-			}
-			Write();
-			header('Location:index.php');
-		};
 		?>
 		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 			<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
-			<label for="password">Password:</label>
-			<input type="password" name="password" id="password">
+			<label>Password:
+				<input type="password" name="password">
+			</label>
 			<button title="Save changes" type="submit" name="save"><img style='vertical-align: middle;' src='svg/save.svg' /></button>
 		</form>
 		<div style="margin-bottom: 1em; margin-top: 1em;">

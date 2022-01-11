@@ -33,14 +33,18 @@ include('config.php');
         <hr style="margin-bottom: 2em;">
         <div class="text-left">
             <form style="display: inline;" action="index.php" method="GET">
-                <label for="url">URL:</label>
-                <input name='url' id='url' value="<?php echo $_GET['url']; ?>">
-                <label for="txt">Title:</label>
-                <input name='txt' id='txt' value="<?php echo $_GET['txt']; ?>">
-                <label for="tags">Tags (comma-separated):</label>
-                <input name='tags' id='tags' value="<?php echo $_GET['tags']; ?>">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <label>URL:
+                    <input name='url' value="<?php echo $_GET['url']; ?>" required>
+                </label>
+                <label>Title:
+                    <input name='txt' value="<?php echo $_GET['txt']; ?>" required>
+                </label>
+                <label>Tags (comma-separated):
+                    <input name='tags' id='tags' value="<?php echo $_GET['tags']; ?>">
+                </label>
+                <label>Password:
+                    <input type="password" name="password">
+                </label>
         </div>
         <button title="Save the link" type="submit" name="add"><img style='vertical-align: middle;' src='svg/save.svg' /></button>
         </form>
