@@ -66,22 +66,6 @@ include('config.php');
 			foreach ($lines as $line) {
 				echo $line;
 			}
-
-			if ($_GET['password'] == $password) {
-				$tags = explode(", ", $_GET['tags']);
-				foreach ($tags as $tag) {
-					$all_tags = $all_tags . "<a class='tag' href='filter.php?filter=" . $tag . "'><kbd>$tag</kbd></a> ";
-				}
-				$href = '<p><a href="' . $_GET['url'] . '">' . $_GET['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
-				$href .= file_get_contents('links.txt');
-				file_put_contents('links.txt', $href);
-				echo '<meta http-equiv="refresh" content="0; url=' . $_GET['url'] . '">';
-			}
-			if (isset($_GET['password']) && ($_GET['password'] != $password)) {
-				echo "<script>";
-				echo "alert('Wrong password!');";
-				echo "</script>";
-			}
 			?>
 		</div>
 		<div style="margin-bottom: 1em;">
