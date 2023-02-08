@@ -26,6 +26,7 @@ if (isset($_POST["save"])) {
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/lit.css" />
+	<link rel="stylesheet" href="css/styles.css" />
 	<style>
 		textarea {
 			font-size: 15px;

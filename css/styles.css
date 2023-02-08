@@ -1,0 +1,11 @@
+a {
+    color: black;
+}
+a.tag {
+    font-family: monospace;
+    text-decoration: none;
+    padding: 0.2em;
+    border-radius: 4px;
+    border: 1px solid;
+    color: #d400aa;
+}

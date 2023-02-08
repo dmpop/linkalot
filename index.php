@@ -17,15 +17,8 @@ include('config.php');
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/lit.css" />
-	<style>
-		a.tag {
-			text-decoration: none;
-			padding: 0.2em;
-			border-radius: 4px;
-			border: 1px solid;
-			color: #d400aa;
-		}
-	</style>
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/styles.css" />
 	<!-- Suppress form re-submit prompt on refresh -->
 	<script>
 		if (window.history.replaceState) {

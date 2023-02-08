@@ -61,7 +61,7 @@ include('config.php');
                 if (isset($_POST['password']) && ($_POST['password'] == $password)) {
                     $tags = explode(", ", $_POST['tags']);
                     foreach ($tags as $tag) {
-                        $all_tags = $all_tags . "<a class='tag' href='filter.php?filter=" . $tag . "'><kbd>$tag</kbd></a> ";
+                        $all_tags = $all_tags . "<a class='tag' href='filter.php?filter=" . $tag . "'>$tag</a> ";
                     }
                     $href = '<p><a href="' . $_POST['url'] . '">' . $_POST['txt'] . '</a> ' . $all_tags . '</p>' . PHP_EOL;
                     $href .= file_get_contents('links.txt');
