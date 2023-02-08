@@ -14,11 +14,14 @@ include('config.php');
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/classless.css" />
-	<link rel="stylesheet" href="css/themes.css" />
+	<link rel="stylesheet" href="css/lit.css" />
 	<style>
 		a.tag {
 			text-decoration: none;
+			text-decoration: none;
+			padding: 0.2em;
+			border-radius: 4px;
+			border: 1px solid;
 			color: #d400aa;
 		}
 	</style>
@@ -31,13 +34,13 @@ include('config.php');
 </head>
 
 <body>
-	<div class="card text-center">
-		<div style="margin-top: 1em; margin-bottom: 1em;">
+	<div class="c">
+		<div style="text-align: center;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+			<h1 class="text-center" style="display: inline; margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #ce6a85ff;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 1em;">
-		<button title="Back" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
+		<button class="btn" title="Back" onclick="location.href='index.php'">Back</button>
 		<div class="text-left">
 			<?php
 			if (isset($_GET['filter'])) {
@@ -50,7 +53,7 @@ include('config.php');
 			}
 			?>
 		</div>
-		<div style="margin-bottom: 1em;">
+		<div class="card w-100" style="text-align: center; margin-top: 2em;">
 			<?php echo $footer; ?>
 		</div>
 	</div>

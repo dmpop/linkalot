@@ -2,8 +2,8 @@
 // Title
 $title = "Linkalot";
 // Footer text
-$footer = "Read the <a href='https://dmpop.gumroad.com/l/php-right-away'>PHP Right Away</a> book";
+$footer = "This is <a href='https://github.com/dmpop/linkalot'>Linkalot</a> I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 // File for storing links
 $link_file = "links.txt";
 // Password
-$password = "password";
+$password = "secret";

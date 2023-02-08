@@ -25,8 +25,7 @@ if (isset($_POST["save"])) {
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/classless.css" />
-	<link rel="stylesheet" href="css/themes.css" />
+	<link rel="stylesheet" href="css/lit.css" />
 	<style>
 		textarea {
 			font-size: 15px;
@@ -45,13 +44,13 @@ if (isset($_POST["save"])) {
 </head>
 
 <body>
-	<div class="card text-center">
-		<div style="margin-top: 1em; margin-bottom: 1em;">
+	<div class="c">
+		<div style="text-align: center;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+			<h1 class="text-center" style="display: inline; margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #ce6a85ff;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
-		<button title="Back" style="margin-top: 1em;" onclick="location.href='index.php'"><img style='vertical-align: middle;' src='svg/back.svg' /></button>
+		<button class="btn" title="Back" style="margin-top: 1em;" onclick="location.href='index.php'">Back</button>
 		<?php
 		function Read()
 		{
@@ -70,11 +69,11 @@ if (isset($_POST["save"])) {
 		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 			<textarea class="uk-textarea" name="text"><?php Read(); ?></textarea><br /><br />
 			<label>Password:
-				<input type="password" name="password">
+				<input class="card w-100" type="password" name="password">
 			</label>
-			<button title="Save changes" type="submit" name="save"><img style='vertical-align: middle;' src='svg/save.svg' /></button>
+			<button class="btn primary" title="Save changes" type="submit" name="save">Save</button>
 		</form>
-		<div style="margin-bottom: 1em; margin-top: 1em;">
+		<div class="card w-100" style="text-align: center; margin-top: 2em;">
 			<?php echo $footer; ?>
 		</div>
 	</div>

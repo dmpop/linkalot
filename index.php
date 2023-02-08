@@ -16,11 +16,13 @@ include('config.php');
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/classless.css" />
-	<link rel="stylesheet" href="css/themes.css" />
+	<link rel="stylesheet" href="css/lit.css" />
 	<style>
 		a.tag {
 			text-decoration: none;
+			padding: 0.2em;
+			border-radius: 4px;
+			border: 1px solid;
 			color: #d400aa;
 		}
 	</style>
@@ -33,10 +35,10 @@ include('config.php');
 </head>
 
 <body>
-	<div class="card text-center">
-		<div style="margin-top: 1em; margin-bottom: 1em;">
+	<div class="c">
+		<div style="text-align: center;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+			<h1 class="text-center" style="display: inline; margin-left: 0.19em; vertical-align: middle; letter-spacing: 3px; margin-top: 0em; color: #ce6a85ff;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
@@ -48,17 +50,19 @@ include('config.php');
 			echo "</script>";
 		}
 		$rnd_link = $lines[array_rand($lines)];
+		echo '<div class="card w-100">';
 		echo '<p>Total links: <strong>' . count($lines) . '</strong></p>';
 		echo '<p>Random link:</p>';
 		echo '<p>' . $rnd_link . '</p>';
+		echo '</div>';
 		?>
 		<form style="margin-top: 2em; margin-bottom: 2em; display: inline;" method='GET' action='filter.php'>
 			<label for="filter">Filter:</label>
-			<input type='text' name='filter' id='filter'>
-			<button title="Filter links"><img style=' vertical-align: middle;' src='svg/filter.svg' /></button>
+			<input class="card w-100" type='text' name='filter' id='filter'>
+			<button class="btn primary" title="Filter links">Filter</button>
 		</form>
-		<button title="Edit link list" onclick='window.location.href = "edit.php"'><img style='vertical-align: middle;' src='svg/edit.svg' /></button>
-		<button title="Add new link" onclick='window.location.href = "add.php"'><img style='vertical-align: middle;' src='svg/add.svg' /></button>
+		<button class="btn primary" title="Edit link list" onclick='window.location.href = "edit.php"'>Edit</button>
+		<button class="btn primary" title="Add new link" onclick='window.location.href = "add.php"'>Add link</button>
 		<hr style="margin-top: 2em; margin-bottom: 2em;">
 		<div class="text-left">
 			<?php
@@ -68,7 +72,7 @@ include('config.php');
 			}
 			?>
 		</div>
-		<div style="margin-bottom: 1em;">
+		<div class="card w-100" style="text-align: center; margin-top: 2em;">
 			<?php echo $footer; ?>
 		</div>
 	</div>
