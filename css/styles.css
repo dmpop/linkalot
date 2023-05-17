@@ -9,3 +9,10 @@ a.tag {
     border: 1px solid;
     color: #d400aa;
 }
+
+@font-face {
+    font-family: "Karla";
+    src: url('../fonts/Karla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

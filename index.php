@@ -18,7 +18,6 @@ include('config.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/lit.css" />
 	<link rel="stylesheet" href="css/styles.css" />
-	<link rel="stylesheet" href="css/styles.css" />
 	<!-- Suppress form re-submit prompt on refresh -->
 	<script>
 		if (window.history.replaceState) {
